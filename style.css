@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7fa; /* soft white */
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1976d2;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-section input,
+.form-section select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  flex: 1;
+  background: #eef1f5; /* light gray for eyes */
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  outline: 2px solid #1976d2;
+}
+
+.form-section button {
+  padding: 10px 15px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-section button:hover {
+  background: #125ca3;
+}
+
+/* Summary Cards */
+.summary-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* Chart Section */
+.chart-section {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.chart-section canvas {
+  max-width: 300px;
+  margin: 20px auto;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2));
+}
+
+/* Transaction Section */
+.transaction-section {
+  margin-top: 25px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.transaction-section ul {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.transaction-section li {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(25,118,210,0.05);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background: #f44336;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+/* Export Section Buttons */
+.export-section button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: 500;
+  transition: 0.3s;
+  background: #1976d2;  /* default light mode blue */
+  color: #fff;
+}
+
+.export-section button:hover {
+  background: #125ca3;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .form-section input,
+body.dark-mode .form-section select {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border: none;
+}
+
+body.dark-mode .summary-card,
+body.dark-mode .chart-section,
+body.dark-mode .transaction-section {
+  background: #1e1e1e;
+  box-shadow: 0 3px 6px rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+body.dark-mode .export-section button {
+  background: #0d6efd;
+  color: #fff;
+}
+
+body.dark-mode .export-section button:hover {
+  background: #084298;
+}
+
+/* Chart Legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.income-color {
+  background: #4caf50;
+}
+
+.expense-color {
+  background: #f44336;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 4px; bottom: 3.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
